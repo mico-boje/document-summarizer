@@ -3,7 +3,7 @@ import ast
 import nltk
 import json
 
-filename = r'/home/miboj/Data-Science/NLP/document-summarizer/data/internal/raw/articles.json'
+filename = r'/home/miboj/NLP/document-summarizer/data/raw/articles.json'
 file = open(filename, encoding='ascii', errors='ignore')
 text = file.read()
 file.close()
@@ -26,9 +26,9 @@ for i in d:
 a = ''.join(tokens_list)
 sent_tokens = nltk.sent_tokenize(a)
 json_file = {'tokens': sent_tokens}
-with open(r'/home/miboj/Data-Science/NLP/document-summarizer/data/internal/cleaned/sent_tokens.json', 'x') as f:
+with open(r'/home/miboj/NLP/document-summarizer/data/processed/articles.json', 'x') as f:
     json.dump(json_file, f)
-
+print('finished')
 
 
 
